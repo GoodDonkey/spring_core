@@ -81,5 +81,4 @@ public class ApplicationContextExtendsFindTest {
             return new FixedDiscountPolicy();
         }
     }
-
 }
