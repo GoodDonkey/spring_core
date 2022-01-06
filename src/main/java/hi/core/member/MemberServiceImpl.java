@@ -19,4 +19,9 @@ public class MemberServiceImpl implements MemberService{
         System.out.println("MemberServiceImpl findMember!");
         return memberRepository.findById(memberId);
     }
+
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
 }
