@@ -2,6 +2,7 @@ package hi.core;
 
 import hi.core.discount.DiscountPolicy;
 import hi.core.discount.FixedDiscountPolicy;
+import hi.core.discount.RateDiscountPolicy;
 import hi.core.member.MemberRepository;
 import hi.core.member.MemberService;
 import hi.core.member.MemberServiceImpl;
@@ -24,6 +25,7 @@ public class AppConfig {
     }
 
     private DiscountPolicy DiscountPolicy() {
-        return new FixedDiscountPolicy();
+        return new RateDiscountPolicy();
+//        return new FixedDiscountPolicy();
     }
 }
