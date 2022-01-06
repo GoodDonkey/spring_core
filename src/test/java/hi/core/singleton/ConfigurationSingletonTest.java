@@ -35,7 +35,15 @@ public class ConfigurationSingletonTest {
         assertThat(memberRepository1).isSameAs(memberRepository2);
         assertThat(memberRepository1).isSameAs(memberRepository);
         assertThat(memberRepository2).isSameAs(memberRepository);
+    }
 
+    @Test
+    @DisplayName("@configuration?")
+    void configurationDeep() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);
+        // AppConfig 클래스이름이 순수한 클래스로 출력되지 않는다.
+        System.out.println("bean.getClass() = " + bean.getClass());
 
     }
 }
