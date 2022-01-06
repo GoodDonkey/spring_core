@@ -3,10 +3,11 @@ package hi.core.discount;
 import hi.core.member.Grade;
 import hi.core.member.Member;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("mainDiscountPolicy") // 빈을 Qualifier가 mainDiscountPolicy 인 빈으로 찾을 수 있게 해준다.
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;
