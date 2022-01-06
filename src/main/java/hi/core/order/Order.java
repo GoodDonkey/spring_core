@@ -13,6 +13,10 @@ public class Order {
         this.discountPrice = discountPrice;
     }
 
+    public int calucaltePrice() {
+        return itemPrice - discountPrice;
+    }
+
     public Long getMemberId() {
         return memberId;
     }
