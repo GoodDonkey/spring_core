@@ -2,16 +2,14 @@ package hi.core.discount;
 
 import hi.core.member.Grade;
 import hi.core.member.Member;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class RateDiscountPolicyTest {
 
-    RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
+    DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Test
     @DisplayName("VIP는 10% 할인이 적용되어야 한다.")
@@ -34,5 +32,4 @@ class RateDiscountPolicyTest {
         //then
         assertThat(discount).isEqualTo(0);
     }
-
 }
