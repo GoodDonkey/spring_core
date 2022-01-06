@@ -10,11 +10,13 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public void save(Member member) {
         store.put(member.getId(), member);
+        System.out.println("MemoryMemberRepository saved!");
 
     }
 
     @Override
     public Member findById(Long memberId) {
+        System.out.println("MemoryMemberRepository findById!");
         return store.get(memberId);
     }
 

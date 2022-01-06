@@ -6,11 +6,13 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void join(Member member) {
-
+        System.out.println("MemberServiceImpl joined!");
+        memberRepository.save(member);
     }
 
     @Override
     public Member findMember(Long memberId) {
+        System.out.println("MemberServiceImpl findMember!");
         return memberRepository.findById(memberId);
     }
 }
