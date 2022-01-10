@@ -13,15 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 @RequiredArgsConstructor
 public class LogDemoController {
     private final LogDemoService logDemoService;
-    private final ObjectProvider<MyLogger> provider;
+    private final MyLogger myLogger;
 
     @RequestMapping("log-demo")
     @ResponseBody // 문자 바로 보내기
     public String logDemo(HttpServletRequest request) {
         String requestURL = request.getRequestURL().toString();
-        MyLogger myLogger = provider.getObject();
         myLogger.setRequestURL(requestURL);
         myLogger.log("controller test");
+
+        System.out.println("myLogger.getClass() = " + myLogger.getClass()); // 프록시 객체가 검색됨.
 
         logDemoService.logic("testId");
         return "OK";
